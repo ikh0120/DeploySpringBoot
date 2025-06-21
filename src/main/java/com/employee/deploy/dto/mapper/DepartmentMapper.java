@@ -7,8 +7,8 @@ import lombok.*;
 public class DepartmentMapper {
 
     public static DepartmentDto toDto(Department department) {
-        return DepartmentDto.builder()
-                .id(department.getId())
+        return DepartmentDto.builder()  // DepartmentDtoBuilder
+                .id(department.getId()) //
                 .departmentName(department.getDepartmentName())
                 .departmentDescription(department.getDepartmentDescription())
                 .build();
