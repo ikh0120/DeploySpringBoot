@@ -6,27 +6,27 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Java CI with Maven # 워크플로우 이름 (GitHub Actions 탭에서 표시됨)
 
-on:
+on: # 언제 워크플로우를 실행할 지 정의 (workflow 실행 조건)
   push:
-    branches: [ "main" ]
+    branches: [ "main" ] # main 브랜치에 push가 발생하면 실행
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main" ] # main 브랜치에 pr(pull_request)이 열리거나 업데이트 되면 실행 됨
 
 jobs:
-  build:
+  build: # 실행할 작업(job)의 이름
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 가장 최신의 ubuntu에서 job이 실행 됨
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4 # 현재 레포지토리의 코드를 체크아웃 (필수 단계)
     - name: Set up JDK 17
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v4 # 자바 개발 환경(JDK) 실정용 공식 액션
       with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
+        java-version: '17' # 사용할 자바 버전
+        distribution: 'temurin' # Adoptium의 Temurin 배포판 사용
+        cache: maven # Maven 의존성 캐시를 자동으로 설정하여 빌드 속도 향상
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml # Maven을 이용하여 프로젝트 빌드(-B는 비대화식 모드)
 
