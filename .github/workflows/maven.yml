@@ -16,7 +16,7 @@ on: # 언제 워크플로우를 실행할 지 정의 (workflow 실행 조건)
 
 env:
   DOCKER_IMAGE: springbootreactjs
-  DOCKER_TAG: 0.5
+  DOCKER_TAG: 0.6
 
 jobs:
   build: # 실행할 작업(job)의 이름
