@@ -19,10 +19,51 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
+    // Build Add Employee REST API
+//    @PostMapping
+//    public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDto){
+//        EmployeeDto savedEmployee = employeeService.createEmployee(employeeDto);
+//        return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
+//    }
+//
+//    // Build Get Employee REST API
+//    @GetMapping("{id}")
+//    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable("id") Long employeeId){
+//        EmployeeDto employeeDto = employeeService.getEmployeeById(employeeId);
+//        return ResponseEntity.ok(employeeDto);
+//    }
+//
+//    // Build Get All Employees REST API
+//    @GetMapping
+//    public ResponseEntity<List<EmployeeDto>> getAllEmployees(){
+//        List<EmployeeDto> employees = employeeService.getAllEmployees();
+//        return ResponseEntity.ok(employees);
+//    }
+//
+//    @GetMapping("/departments")
+//    public ResponseEntity<List<EmployeeDto>> getAllEmployeesDepartment() {
+//        return ResponseEntity.ok(employeeService.getAllEmployeesDepartment());
+//    }
+//
+//
+//    // Build Update Employee REST API
+//    @PutMapping("{id}")
+//    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable("id") Long employeeId,
+//                                                      @RequestBody EmployeeDto updatedEmployee){
+//          EmployeeDto employeeDto = employeeService.updateEmployee(employeeId, updatedEmployee);
+//          return ResponseEntity.ok(employeeDto);
+//    }
+//
+//    // Build Delete Employee REST API
+//    @DeleteMapping("{id}")
+//    public ResponseEntity<String> deleteEmployee(@PathVariable("id") Long employeeId){
+//        employeeService.deleteEmployee(employeeId);
+//        return ResponseEntity.ok("Employee deleted successfully!.");
+//    }
+
     @PostMapping
     public ResponseEntity<EmployeeDto> createEmployee(@Valid @RequestBody EmployeeDto employeeDto) {
         EmployeeDto savedEmployee = employeeService.createEmployee(employeeDto);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(savedEmployee);
     }
 
@@ -43,7 +84,8 @@ public class EmployeeController {
 
     @PutMapping("/{id}")
     public ResponseEntity<EmployeeDto> updateEmployee(
-            @PathVariable Long id, @Valid @RequestBody EmployeeDto employeeDto) {
+            @PathVariable Long id,
+            @Valid @RequestBody EmployeeDto employeeDto) {
         return ResponseEntity.ok(employeeService.updateEmployee(id, employeeDto));
     }
 

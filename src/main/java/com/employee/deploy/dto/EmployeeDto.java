@@ -1,6 +1,8 @@
 package com.employee.deploy.dto;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
@@ -26,4 +28,22 @@ public class EmployeeDto {
 
     private DepartmentDto departmentDto;
 
+//    public EmployeeDto(Long id,String firstName,String lastName, String email) {
+//        this.id = id;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//    }
+//
+//
+//    public EmployeeDto(Long id,String firstName,String lastName, String email, Long departmentId) {
+//        this(id,firstName,lastName,email);
+//        this.departmentId = departmentId;
+//    }
+//
+//
+//    public EmployeeDto(Long id,String firstName,String lastName, String email, DepartmentDto departmentDto) {
+//        this(id,firstName,lastName,email);
+//        this.departmentDto = departmentDto;
+//    }
 }

@@ -1,7 +1,7 @@
 package com.employee.deploy.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import jakarta.validation.constraints.*;
 
 @Getter
 @Setter

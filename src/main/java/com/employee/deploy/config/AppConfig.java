@@ -3,7 +3,6 @@ package com.employee.deploy.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.fasterxml.jackson.datatype.hibernate6.Hibernate6Module;
-//import com.fasterxml.jackson.datatype.hibernate6.H;
 
 @Configuration
 public class AppConfig {

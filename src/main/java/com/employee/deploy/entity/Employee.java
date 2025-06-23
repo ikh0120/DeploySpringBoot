@@ -5,6 +5,8 @@ import lombok.*;
 
 @Getter
 @Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
@@ -16,9 +18,11 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    //@Column(name = "first_name")
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
+    //@Column(name = "last_name")
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
@@ -26,6 +30,7 @@ public class Employee {
     private String email;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "department_id")
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 }
